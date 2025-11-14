@@ -60,7 +60,7 @@ export default function AnnouncementsSection() {
           <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
             <Bell className="w-8 h-8 text-orange-600" />
           </motion.div>
-          <h2 className="text-display gradient-text">Latest Announcements</h2>
+          <span className="text-display gradient-text">Latest Announcements</span>
         </div>
         <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
           Stay informed with the most recent updates and important notices from Calapan City Government. We keep you

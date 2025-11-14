@@ -102,7 +102,7 @@ export default function Home() {
 
 
   const stats = [
-    { label: "Active Citizens", value: "200000K+", icon: Users },
+    { label: "Active Citizens", value: "200K+", icon: Users },
     { label: "Services", value: "50+", icon: Zap },
     { label: "Requests Processed", value: "12K+", icon: TrendingUp },
   ]
@@ -234,7 +234,7 @@ export default function Home() {
                 animate={{ scaleY: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <h2 className="text-display gradient-text">Latest Announcements</h2>
+              <div className="text-display text-md gradient-text">Latest Announcements</div>
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}

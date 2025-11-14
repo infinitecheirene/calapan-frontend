@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {}, // Required for custom webpack-free config
 };
 
 export default nextConfig;
