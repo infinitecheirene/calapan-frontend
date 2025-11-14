@@ -21,7 +21,7 @@ export default function Footer() {
 
       <div className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-5 gap-8 mb-12">
+          <div className="grid md:grid-cols-5 gap-8 mb-12 justify-items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -30,11 +30,11 @@ export default function Footer() {
               className="md:col-span-2"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-400 to-orange-400 flex items-center justify-center">
-                  <span className="font-bold text-lg text-slate-900">C</span>
+                <div className="w-10 h-10 flex items-center justify-center">
+                  <img src="/logo.png" alt="Calapan Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">Calapan City</h3>
+                  <h3 className="text-lg font-bold gradient-text">Calapan City</h3>
                   <p className="text-xs text-gray-400">Government System</p>
                 </div>
               </div>
@@ -89,10 +89,10 @@ export default function Footer() {
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-gray-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-1 group"
+                        className="text-gray-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-1 group sm:ml-0 -ml-4 w-32 text-lg sm:text-md"
                       >
                         <span className="opacity-0 group-hover:opacity-100 transition-opacity">
-                          <ArrowRight className="w-3 h-3" />
+                          <ArrowRight className="w-3 h-3 sm:visible invisible" />
                         </span>
                         {link}
                       </a>

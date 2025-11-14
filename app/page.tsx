@@ -234,7 +234,7 @@ export default function Home() {
                 animate={{ scaleY: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <div className="text-display text-md gradient-text">Latest Announcements</div>
+              <div className="text-2xl sm:text-6xl gradient-text">Latest Announcements</div>
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -348,7 +348,7 @@ export default function Home() {
                 animate={{ scaleY: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
               />
-              <h2 className="text-display gradient-text">Popular Services</h2>
+              <h2 className="text-2xl sm:text-6xl gradient-text">Popular Services</h2>
             </div>
             <p className="text-lg text-gray-600 max-w-2xl">Quick access to the services that matter most to you</p>
           </motion.div>

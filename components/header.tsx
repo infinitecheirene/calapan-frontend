@@ -148,7 +148,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold gradient-text">Calapan</span>
-            <span className="text-xs text-orange-600 font-semibold">City System</span>
+            <span className="text-xs text-orange-600 font-semibold">Government System</span>
           </div>
         </motion.div>
 
