@@ -17,7 +17,6 @@ export default function HeroSection() {
   }}
 />
 
-
       <div className="absolute inset-0 overflow-hidden z-0">
         <motion.div
           animate={{ y: [0, -30, 0], x: [0, 15, 0] }}

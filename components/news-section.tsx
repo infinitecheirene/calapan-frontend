@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Newspaper, ArrowRight} from "lucide-react"
+import CTASection from "@/components/cta-section"
 
 const news = [
   {
@@ -29,24 +30,25 @@ const news = [
 
 export default function NewsSection() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="mb-8"
-      >
-        <div className="flex items-center gap-3 mb-6">
-          <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
-            <Newspaper className="w-8 h-8 text-orange-600" />
-          </motion.div>
-          <span className="text-2xl gradient-text">Latest News</span>
-        </div>
-        <p className="text-lg text-gray-600 leading-relaxed border-b pb-3">
-          Latest updates and important news from the Calapan City Government — keeping you informed on what’s important.
-        </p>
-      </motion.div>
+    <main className="min-h-screen">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-8"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+              <Newspaper className="w-8 h-8 text-orange-600" />
+            </motion.div>
+            <span className="text-2xl gradient-text">Latest News</span>
+          </div>
+          <p className="text-lg text-gray-600 leading-relaxed border-b pb-3">
+            Latest updates and important news from the Calapan City Government — keeping you informed on what’s important.
+          </p>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {news.map((item, i) => (
@@ -75,6 +77,8 @@ export default function NewsSection() {
             </motion.div>
           ))}
         </div>
-    </section>
+      </section>
+      <CTASection />
+    </main>
   )
 }
