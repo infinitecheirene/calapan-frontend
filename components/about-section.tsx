@@ -23,22 +23,8 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 via-white to-orange-50">
+    <section id="about" className="py-5 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="mb-16 text-center"
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">About Calapan City</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Calapan City Government is committed to providing world-class services with integrity and transparency,
-            fostering community development through innovation and citizen engagement.
-          </p>
-        </motion.div>
-
         <div className="grid md:grid-cols-3 gap-8">
           {values.map((value, i) => {
             const Icon = value.icon
@@ -64,6 +50,32 @@ export default function AboutSection() {
               </motion.div>
             )
           })}
+        </div>
+
+        <div className="my-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="mb-16 text-center"
+          >
+            <p className="text-gray-600 text-lg text-justify mx-auto">
+              The <b>Calapan City Government</b> is dedicated to delivering world-class services with the highest standards of integrity and transparency. 
+              We strive to foster sustainable community development by embracing innovation, leveraging modern technology, and actively engaging our citizens in decision-making processes. 
+              Through collaborative initiatives and responsive governance, we aim to create a safe, inclusive, and thriving city where every resident has the opportunity to contribute 
+              to and benefit from the growth and progress of Calapan.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 sm:mx-10">
+          <div className="space-y-2">
+            <h1 className="uppercase text-4xl font-medium text-center">Calapan City Map</h1>
+          </div>
+          <div className="space-y-2">
+            <img src="/BASE-MAP.png" alt="Calapan Map"/>
+          </div>
         </div>
       </div>
     </section>

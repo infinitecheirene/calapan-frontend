@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Newspaper, ArrowRight } from "lucide-react"
+import { Newspaper, ArrowRight} from "lucide-react"
 
 const news = [
   {
@@ -29,21 +29,24 @@ const news = [
 
 export default function NewsSection() {
   return (
-    <section id="news" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 to-emerald-50">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="mb-16"
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <Newspaper className="w-6 h-6 text-emerald-500" />
-            <h2 className="text-4xl sm:text-5xl font-bold gradient-text">Latest News</h2>
-          </div>
-          <p className="text-gray-600 text-lg max-w-2xl">Read the latest stories from Calapan City</p>
-        </motion.div>
+    <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="mb-16"
+      >
+        <div className="flex items-center gap-3 mb-6">
+          <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+            <Newspaper className="w-8 h-8 text-orange-600" />
+          </motion.div>
+          <span className="text-2xl gradient-text">Latest News</span>
+        </div>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Latest updates and important news from the Calapan City Government — keeping you informed on what’s important.
+        </p>
+      </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {news.map((item, i) => (
@@ -72,7 +75,6 @@ export default function NewsSection() {
             </motion.div>
           ))}
         </div>
-      </div>
     </section>
   )
 }

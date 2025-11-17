@@ -6,7 +6,7 @@ import ServicesSection from "@/components/services-section"
 export default function ServicesPage() {
   return (
     <PageLayout
-      title="City Services"
+      title="Services"
       subtitle="Explore all the services we offer to our citizens"
       image="/government-services-city-utilities.jpg"
     >

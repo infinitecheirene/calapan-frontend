@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Building2, FileText, Users, Heart, Zap, TrendingUp, Sparkles } from "lucide-react"
+import { MonitorCheck, ArrowRight, Building2, FileText, Users, Heart, Zap, TrendingUp, Sparkles } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 
@@ -64,20 +64,25 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-orange-50 to-emerald-50">
+    <section className="py-10 px-4 sm:px-6 lg:px-8">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="mb-16 text-center"
+        className="mb-16"
       >
-        <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">Our Services</h2>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          Access a comprehensive range of municipal services designed for your convenience
+        <div className="flex items-center gap-3 mb-6">
+          <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+            <MonitorCheck className="w-8 h-8 text-orange-600" />
+          </motion.div>
+          <span className="text-2xl gradient-text">City Services</span>
+        </div>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Access a comprehensive range of municipal services designed to make your city transactions easier and more convenient.
         </p>
       </motion.div>
-
+      
       <motion.div
             variants={containerVariants}
             initial="hidden"

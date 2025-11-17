@@ -48,7 +48,7 @@ export default function AnnouncementsSection() {
   }
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -60,9 +60,9 @@ export default function AnnouncementsSection() {
           <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
             <Bell className="w-8 h-8 text-orange-600" />
           </motion.div>
-          <span className="text-xl gradient-text">Latest Announcements</span>
+          <span className="text-2xl gradient-text">Latest Announcements</span>
         </div>
-        <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+        <p className="text-lg text-gray-600 leading-relaxed">
           Stay informed with the most recent updates and important notices from Calapan City Government. We keep you
           connected to what matters.
         </p>

@@ -13,7 +13,7 @@ export default function PageHeroBanner({ title, subtitle, image }: PageHeroBanne
   return (
     <div className="relative h-64 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
         style={{ backgroundImage: `url('${image}')` }}
       />
       <div className="absolute inset-0 bg-black/40" />
@@ -24,7 +24,7 @@ export default function PageHeroBanner({ title, subtitle, image }: PageHeroBanne
         transition={{ duration: 0.6 }}
         className="relative h-full flex flex-col items-center justify-center text-center px-4"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">{title}</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">{title}</h1>
         {subtitle && <p className="text-lg md:text-xl text-white/90 mt-2 drop-shadow-md">{subtitle}</p>}
       </motion.div>
     </div>

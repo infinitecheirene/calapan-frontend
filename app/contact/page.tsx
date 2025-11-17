@@ -4,6 +4,25 @@ import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import PageLayout from "@/components/page-layout"
 
+function Map() {
+  return (
+    <div style={{ width: '100%', height: '400px' }}>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.535729495896!2d121.18033177572742!3d13.37911950581156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bce92544f3d819%3A0x29a37a79f34acaa2!2sCalapan%20City%20Hall!5e0!3m2!1sen!2sph!4v1763345133260!5m2!1sen!2sph"
+        width="100%"
+        height="450"
+        style={{ border: 0 }}
+        title="Calapan City Map"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
+  );
+}
+
+
+
 export default function ContactPage() {
   return (
     <PageLayout
@@ -113,7 +132,7 @@ export default function ContactPage() {
         className="bg-white rounded-2xl overflow-hidden shadow-lg border border-orange-100"
       >
         <div className="w-full h-96 bg-gradient-to-br from-orange-200 via-emerald-100 to-orange-100 flex items-center justify-center">
-          <p className="text-gray-500 font-medium">Interactive map would appear here</p>
+          <Map/>
         </div>
       </motion.div>
     </PageLayout>
