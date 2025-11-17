@@ -1,16 +1,39 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { Facebook, Twitter, Linkedin, Instagram, ArrowRight } from "lucide-react"
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/announcements", label: "Announcements" },
-  { href: "/news", label: "News" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-]
+const footerLinks = [
+  {
+    title: "Quick Links",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Announcements", href: "/announcements" },
+      { label: "News", href: "/news" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { label: "Permits", href: "/services/permits" },
+      { label: "Civil Registry", href: "/services/civil-registry" },
+      { label: "Health", href: "/services/health" },
+      { label: "Reports", href: "/services/reports" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Accessibility", href: "/accessibility" },
+      { label: "Sitemap", href: "/sitemap" },
+    ],
+  },
+];
+
 
 export default function Footer() {
   return (
@@ -71,20 +94,7 @@ export default function Footer() {
               </motion.div>
             </motion.div>
 
-            {[
-              {
-                title: "Quick Links",
-                links: ["Home", "Services", "Announcements", "News"],
-              },
-              {
-                title: "Services",
-                links: ["Permits", "Civil Registry", "Health", "Reports"],
-              },
-              {
-                title: "Legal",
-                links: ["Privacy Policy", "Terms of Service", "Accessibility", "Sitemap"],
-              },
-            ].map((section, i) => (
+            {footerLinks.map((section, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -92,24 +102,25 @@ export default function Footer() {
                 transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
                 viewport={{ once: true }}
               >
-                <h4 className="font-bold mb-4 text-white">{section.title}</h4>
-                <ul className="space-y-3">
-                  {section.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-1 group sm:ml-0 -ml-4 w-32 text-lg sm:text-md"
-                      >
-                        <span className="opacity-0 group-hover:opacity-100 transition-opacity">
-                          <ArrowRight className="w-3 h-3 sm:visible invisible" />
-                        </span>
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+              <h4 className="font-bold mb-4 text-white">{section.title}</h4>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-1 group sm:ml-0 -ml-4 w-32 text-lg sm:text-md"
+                    >
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ArrowRight className="w-3 h-3 sm:visible invisible" />
+                      </span>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+
           </div>
 
           <motion.div
