@@ -11,8 +11,8 @@ const navLinks = [
   { href: "/announcements", label: "Announcements" },
   { href: "/news", label: "News" },
   { href: "/services", label: "Services" },
-  { href: "/about", label: "About Us" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ]
 
 interface BeforeInstallPromptEvent extends Event {
@@ -137,7 +137,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-orange-200">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between relative">
+        
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -152,7 +153,7 @@ export default function Header() {
           </div>
         </motion.div>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-4">
           {navLinks.map((link, i) => (
             <motion.div
               key={link.href}
@@ -162,7 +163,7 @@ export default function Header() {
             >
               <Link
                 href={link.href}
-                className={`text-smfont-semibold transition-all relative group ${
+                className={`text-sm font-semibold transition-all relative group ${
                   pathname === link.href ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
                 }`}
               >
@@ -173,12 +174,7 @@ export default function Header() {
           ))}
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }} 
-          animate={{ opacity: 1, x: 0 }} 
-          className="hidden md:flex items-center gap-3"
-        >
-          {/* PWA Install Button */}
+        <motion.div className="hidden md:flex items-center gap-3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
           {showInstallButton && !isInstalled && (
             <motion.button
               initial={{ scale: 0, opacity: 0 }}
@@ -193,7 +189,6 @@ export default function Header() {
             </motion.button>
           )}
 
-          {/* Already Installed Badge */}
           {isInstalled && (
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
@@ -206,7 +201,6 @@ export default function Header() {
             </motion.div>
           )}
 
-          {/* Login Button */}
           <Link
             href="/login"
             className="px-6 py-2.5 rounded-full bg-gradient-to-r from-orange-600 to-orange-500 text-white font-semibold hover:shadow-xl transition-all hover:scale-105 active:scale-95"
@@ -216,74 +210,70 @@ export default function Header() {
         </motion.div>
 
         {/* Mobile Menu Toggle */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
+        <button
+          onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 rounded-lg hover:bg-orange-50 transition-colors"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-orange-100 px-4 py-4 space-y-3"
-          >
-            {navLinks.map((link) => (
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-white border-t border-orange-100 px-4 py-4 space-y-3 overflow-hidden absolute top-full left-0 w-full z-40 shadow-md"
+            >
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`block text-sm font-medium py-2 transition-colors ${
+                    pathname === link.href ? "text-orange-600 font-semibold" : "text-gray-700 hover:text-orange-600"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* Mobile PWA Buttons */}
+              {showInstallButton && !isInstalled && (
+                <motion.button
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  onClick={() => {
+                    handleInstallClick();
+                    setIsOpen(false);
+                  }}
+                  className="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-medium text-center flex items-center justify-center gap-2 hover:shadow-lg transition-all active:scale-95"
+                >
+                  <Download size={18} />
+                  <span>Install App</span>
+                </motion.button>
+              )}
+
+              {isInstalled && (
+                <div className="block w-full px-4 py-3 rounded-lg bg-emerald-50 text-emerald-700 font-medium text-center flex items-center justify-center gap-2 border border-emerald-200">
+                  <Check size={18} />
+                  <span>App Installed</span>
+                </div>
+              )}
+
               <Link
-                key={link.href}
-                href={link.href}
-                className={`block text-sm font-medium py-2 transition-colors ${
-                  pathname === link.href 
-                    ? "text-orange-600 font-semibold" 
-                    : "text-gray-700 hover:text-orange-600"
-                }`}
+                href="/login"
+                className="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium text-center hover:shadow-lg transition-all active:scale-95"
                 onClick={() => setIsOpen(false)}
               >
-                {link.label}
+                Login
               </Link>
-            ))}
-
-            {/* Mobile PWA Install Button */}
-            {showInstallButton && !isInstalled && (
-              <motion.button
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                onClick={() => {
-                  handleInstallClick()
-                  setIsOpen(false)
-                }}
-                className="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-medium text-center mt-2 flex items-center justify-center gap-2 hover:shadow-lg transition-all active:scale-95"
-              >
-                <Download size={18} />
-                <span>Install App</span>
-              </motion.button>
-            )}
-
-            {/* Mobile Already Installed Badge */}
-            {isInstalled && (
-              <div className="block w-full px-4 py-3 rounded-lg bg-emerald-50 text-emerald-700 font-medium text-center mt-2 flex items-center justify-center gap-2 border border-emerald-200">
-                <Check size={18} />
-                <span>App Installed</span>
-              </div>
-            )}
-
-            {/* Mobile Login Button */}
-            <Link
-              href="/login"
-              className="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium text-center mt-2 hover:shadow-lg transition-all active:scale-95"
-              onClick={() => setIsOpen(false)}
-            >
-              Login
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
     </header>
   )
 }

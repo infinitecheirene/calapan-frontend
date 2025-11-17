@@ -64,7 +64,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className="py-10 px-4 sm:px-6 lg:px-8">
+    <section className="px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
