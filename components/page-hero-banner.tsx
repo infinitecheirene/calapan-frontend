@@ -24,7 +24,7 @@ export default function PageHeroBanner({ title, subtitle, image }: PageHeroBanne
         transition={{ duration: 0.6 }}
         className="relative h-full flex flex-col items-center justify-center text-center px-4"
       >
-        <h1 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">{title}</h1>
+        <h1 className="text-4xl sm:text-5xl text-white font-bold mb-4">{title}</h1>
         {subtitle && <p className="text-lg md:text-xl text-white/90 mt-2 drop-shadow-md">{subtitle}</p>}
       </motion.div>
     </div>

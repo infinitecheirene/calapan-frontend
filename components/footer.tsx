@@ -3,6 +3,15 @@
 import { motion } from "framer-motion"
 import { Facebook, Twitter, Linkedin, Instagram, ArrowRight } from "lucide-react"
 
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/announcements", label: "Announcements" },
+  { href: "/news", label: "News" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
