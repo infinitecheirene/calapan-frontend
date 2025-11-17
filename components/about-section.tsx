@@ -25,8 +25,8 @@ export default function AboutSection() {
 
   return (
     <main>
-      <section id="about" className="px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="mb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, i) => {
               const Icon = value.icon
