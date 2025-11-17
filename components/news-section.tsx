@@ -35,7 +35,7 @@ export default function NewsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="mb-16"
+        className="mb-8"
       >
         <div className="flex items-center gap-3 mb-6">
           <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
@@ -43,7 +43,7 @@ export default function NewsSection() {
           </motion.div>
           <span className="text-2xl gradient-text">Latest News</span>
         </div>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-lg text-gray-600 leading-relaxed border-b pb-3">
           Latest updates and important news from the Calapan City Government — keeping you informed on what’s important.
         </p>
       </motion.div>

@@ -54,7 +54,7 @@ export default function AnnouncementsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="mb-16"
+        className="mb-8"
       >
         <div className="flex items-center gap-3 mb-6">
           <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
@@ -62,7 +62,7 @@ export default function AnnouncementsSection() {
           </motion.div>
           <span className="text-2xl gradient-text">Latest Announcements</span>
         </div>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-lg text-gray-600 leading-relaxed border-b pb-3">
           Stay informed with the most recent updates and important notices from Calapan City Government. We keep you
           connected to what matters.
         </p>
@@ -76,15 +76,15 @@ export default function AnnouncementsSection() {
         className="grid md:grid-cols-3 gap-6"
       >
         {announcements.map((announcement) => (
-      <motion.div
-  key={announcement.id}
-  variants={itemVariants}
-  whileHover={{
-    y: -12,
-    boxShadow: "0 20px 60px rgba(234, 88, 12, 0.15)",
-  }}
-  className="card-premium p-8 group hover:border-orange-300"
->
+          <motion.div
+            key={announcement.id}
+            variants={itemVariants}
+            whileHover={{
+              y: -12,
+              boxShadow: "0 20px 60px rgba(234, 88, 12, 0.15)",
+            }}
+            className="card-premium p-8 group hover:border-orange-300"
+          >
 
             <div className="flex items-start justify-between mb-6">
               <motion.span

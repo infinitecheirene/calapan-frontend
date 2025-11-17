@@ -58,7 +58,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="mb-16 text-center"
+            className="mb-8 text-center"
           >
             <p className="text-gray-600 text-lg text-justify mx-auto">
               The <b>Calapan City Government</b> is dedicated to delivering world-class services with the highest standards of integrity and transparency. 
@@ -71,7 +71,7 @@ export default function AboutSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 sm:mx-10">
           <div className="space-y-2">
-            <h1 className="uppercase text-4xl font-medium text-center">Calapan City Map</h1>
+            <h1 className="uppercase text-4xl font-semibold my-2 text-center">Calapan City Map</h1>
           </div>
           <div className="space-y-2">
             <img src="/BASE-MAP.png" alt="Calapan Map"/>

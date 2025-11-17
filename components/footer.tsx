@@ -38,7 +38,7 @@ export default function Footer() {
                   <p className="text-xs text-gray-400">Government System</p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              <p className="text-gray-400 text-sm leading-relaxed mb-6 text-justify">
                 Building a smarter, more connected, and more transparent city for everyone. Your voice matters, and
                 together we create positive change.
               </p>
