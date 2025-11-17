@@ -162,7 +162,7 @@ export default function Header() {
             >
               <Link
                 href={link.href}
-                className={`text-sm font-semibold transition-all relative group ${
+                className={`text-smfont-semibold transition-all relative group ${
                   pathname === link.href ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
                 }`}
               >
