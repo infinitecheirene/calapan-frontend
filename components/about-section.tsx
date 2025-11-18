@@ -24,9 +24,8 @@ export default function AboutSection() {
   ]
 
   return (
-    <main>
+    <main className="min-h-screen">
       <section className="mb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, i) => {
               const Icon = value.icon
@@ -54,7 +53,7 @@ export default function AboutSection() {
             })}
           </div>
 
-          <div className="my-10">
+          <div className="max-w-6xl my-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +86,6 @@ export default function AboutSection() {
                   />
                 </div>
             </div>
-        </div>
       </section>
       <CTASection />
     </main>

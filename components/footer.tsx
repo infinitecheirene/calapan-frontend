@@ -37,7 +37,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+    <footer className="-z-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden mt-20">
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <motion.div
           animate={{ rotate: 360 }}

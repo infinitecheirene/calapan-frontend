@@ -479,7 +479,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       <CTASection />
       <Footer />
     </main>
