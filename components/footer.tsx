@@ -34,11 +34,10 @@ const footerLinks = [
   },
 ];
 
-
 export default function Footer() {
   return (
-    <footer className="-z-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden mt-20">
-      <div className="absolute inset-0 overflow-hidden opacity-10">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 30, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
@@ -102,25 +101,24 @@ export default function Footer() {
                 transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
                 viewport={{ once: true }}
               >
-              <h4 className="font-bold mb-4 text-white">{section.title}</h4>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-1 group sm:ml-0 -ml-4 w-32 text-lg sm:text-md"
-                    >
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">
-                        <ArrowRight className="w-3 h-3 sm:visible invisible" />
-                      </span>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-
+                <h4 className="font-bold mb-4 text-white">{section.title}</h4>
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-gray-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-1 group"
+                      >
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity">
+                          <ArrowRight className="w-3 h-3" />
+                        </span>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
 
           <motion.div
