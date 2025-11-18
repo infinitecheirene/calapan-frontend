@@ -10,7 +10,7 @@ const CTALinks = [
 
 export default function CTASection() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white shadow-xl">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white shadow-2xl">
       <div className="text-center sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

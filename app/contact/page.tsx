@@ -30,6 +30,7 @@ export default function ContactPage() {
       subtitle="Get in touch with Calapan City Government"
       image="/contact-communication-office-building.jpg"
     >
+    <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
         {/* Contact Form */}
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
@@ -135,6 +136,7 @@ export default function ContactPage() {
           <Map/>
         </div>
       </motion.div>
+    </section>
     </PageLayout>
   )
 }

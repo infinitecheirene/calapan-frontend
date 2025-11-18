@@ -24,36 +24,37 @@ export default function AboutSection() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <section className="grid md:grid-cols-3 gap-8 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          {values.map((value, i) => {
-                const Icon = value.icon
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    whileHover={{ scale: 1.05 }}
-                    className="p-8 rounded-2xl bg-white border border-gray-100 text-center hover:border-emerald-200 transition-all shadow-sm"
-                  >
+    <main>
+      <div className="bg-gradient-to-br from-slate-50 via-orange-50 to-emerald-50">
+        <section className="grid md:grid-cols-3 gap-8 py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            {values.map((value, i) => {
+                  const Icon = value.icon
+                  return (
                     <motion.div
-                      className="inline-flex p-4 rounded-full bg-gradient-to-br from-emerald-100 to-orange-100 mb-6"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
+                      key={i}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      whileHover={{ scale: 1.05 }}
+                      className="p-8 rounded-2xl bg-white border border-gray-100 text-center hover:border-emerald-200 transition-all shadow-sm"
                     >
-                      <Icon className="w-6 h-6 text-emerald-600" />
+                      <motion.div
+                        className="inline-flex p-4 rounded-full bg-gradient-to-br from-emerald-100 to-orange-100 mb-6"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <Icon className="w-6 h-6 text-emerald-600" />
+                      </motion.div>
+                      <h3 className="text-2xl font-bold gradient-text mb-3">{value.title}</h3>
+                      <p className="text-gray-600">{value.description}</p>
                     </motion.div>
-                    <h3 className="text-2xl font-bold gradient-text mb-3">{value.title}</h3>
-                    <p className="text-gray-600">{value.description}</p>
-                  </motion.div>
-                )
-              })}
-        </section>
+                  )
+                })}
+          </section>
 
         <section className="py-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -90,6 +91,7 @@ export default function AboutSection() {
           </div>
         </section>
         <CTASection />
+      </div>
     </main>
   )
 }

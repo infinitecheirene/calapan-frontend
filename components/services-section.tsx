@@ -64,26 +64,27 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="mb-8"
-      >
-        <div className="flex items-center gap-3 mb-6">
-          <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
-            <MonitorCheck className="w-8 h-8 text-orange-600" />
-          </motion.div>
-          <span className="text-2xl gradient-text">City Services</span>
-        </div>
-        <p className="text-lg text-gray-600 leading-relaxed border-b pb-3">
-          Access a comprehensive range of municipal services designed to make your city transactions easier and more convenient.
-        </p>
-      </motion.div>
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-orange-50 to-emerald-50">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-8"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+              <MonitorCheck className="w-8 h-8 text-orange-600" />
+            </motion.div>
+            <span className="text-2xl gradient-text">City Services</span>
+          </div>
+          <p className="text-lg text-gray-600 leading-relaxed border-b pb-3">
+            Access a comprehensive range of municipal services designed to make your city transactions easier and more convenient.
+          </p>
+        </motion.div>
       
-      <motion.div
+        <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -192,7 +193,7 @@ export default function ServicesSection() {
                 />
               </motion.div>
             ))}
-          </motion.div>
+        </motion.div>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/services">
@@ -202,6 +203,7 @@ export default function ServicesSection() {
               </button>
             </Link>
           </motion.div>
+      </div>
     </section>
   )
 }
