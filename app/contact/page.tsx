@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import PageLayout from "@/components/page-layout"
+import Link from "next/link"
 
 function Map() {
   return (
@@ -28,115 +29,169 @@ export default function ContactPage() {
     <PageLayout
       title="Contact Us"
       subtitle="Get in touch with Calapan City Government"
-      image="/contact-communication-office-building.jpg"
+      image="/Calapan_City_Hall.jpg"
     >
-    <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-        {/* Contact Form */}
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-orange-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-            <form className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
-                  placeholder="How can we help?"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
-                  placeholder="Your message..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold hover:shadow-lg transition-all hover:scale-105"
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          {/* Contact Form */}
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-orange-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
+                    placeholder="How can we help?"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                  <textarea
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
+                    placeholder="Your message..."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold hover:shadow-lg transition-all hover:scale-105"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="space-y-6"
+          >
+            {[
+              {
+                icon: MapPin,
+                title: "Office Location",
+                details: "Calapan City Hall, Calapan, Oriental Mindoro, Philippines",
+              },
+              {
+                icon: Phone,
+                title: "Phone",
+                details: "+63 (123) 456-7890",
+              },
+              {
+                icon: Mail,
+                title: "Email",
+                details: "info@calapan.gov.ph",
+              },
+              {
+                icon: Clock,
+                title: "Office Hours",
+                details: "Monday - Friday: 8:00 AM - 5:00 PM",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05, x: 10 }}
+                className="bg-white rounded-2xl p-6 shadow-lg border border-orange-100 flex gap-4"
               >
-                Send Message
-              </button>
-            </form>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.details}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Map Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="bg-white rounded-2xl overflow-hidden shadow-lg border border-orange-100"
+        >
+          <div className="w-full h-96 bg-gradient-to-br from-orange-200 via-emerald-100 to-orange-100 flex items-center justify-center">
+            <Map/>
           </div>
         </motion.div>
+      </section>
 
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2 }}
-          className="space-y-6"
-        >
-          {[
-            {
-              icon: MapPin,
-              title: "Office Location",
-              details: "Calapan City Hall, Calapan, Oriental Mindoro, Philippines",
-            },
-            {
-              icon: Phone,
-              title: "Phone",
-              details: "+63 (123) 456-7890",
-            },
-            {
-              icon: Mail,
-              title: "Email",
-              details: "info@calapan.gov.ph",
-            },
-            {
-              icon: Clock,
-              title: "Office Hours",
-              details: "Monday - Friday: 8:00 AM - 5:00 PM",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05, x: 10 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-orange-100 flex gap-4"
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white shadow-2xl">
+        <div className="text-center sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              animate={{ backgroundPosition: ["0%", "100%", "0%"] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #1f2937, #ea580c, #059669, #1f2937)",
+                backgroundSize: "200% auto",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
             >
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0">
-                <item.icon className="text-white" size={24} />
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.details}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+              Access Government Services Easily
+            </motion.h2>
 
-      {/* Map Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-        className="bg-white rounded-2xl overflow-hidden shadow-lg border border-orange-100"
-      >
-        <div className="w-full h-96 bg-gradient-to-br from-orange-200 via-emerald-100 to-orange-100 flex items-center justify-center">
-          <Map/>
+            <p className="text-gray-600 text-lg mb-8 max-w-3xl mx-auto">
+              Manage your local government needs in one platform—request documents, track applications, and stay updated with city services with just a few clicks.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/login">
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(234, 88, 12, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 rounded-full border-2 border-orange-600 bg-gradient-to-r from-orange-600 to-orange-500 text-white font-bold relative overflow-hidden"
+                >
+                  <span className="relative z-10">Log In</span>
+                </motion.button>
+              </Link>
+
+              <Link href="/register">
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(254, 243, 199, 0.5)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 rounded-full border-2 border-orange-600 text-orange-600 font-bold transition-colors"
+                >
+                  Register
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
-    </section>
+      </section>
     </PageLayout>
   )
 }

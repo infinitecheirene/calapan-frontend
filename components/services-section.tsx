@@ -64,146 +64,202 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-orange-50 to-emerald-50">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="mb-8"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
-              <MonitorCheck className="w-8 h-8 text-orange-600" />
-            </motion.div>
-            <span className="text-2xl gradient-text">City Services</span>
-          </div>
-          <p className="text-lg text-gray-600 leading-relaxed border-b pb-3">
-            Access a comprehensive range of municipal services designed to make your city transactions easier and more convenient.
-          </p>
-        </motion.div>
-      
-        <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
-            style={{ perspective: "1000px" }}
+    <main className="min-h-screen">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-orange-50 to-emerald-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="mb-8"
           >
-            {featuredServices.map((service, i) => (
-              <motion.div
-                key={i}
-                variants={itemVariants}
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-                onHoverStart={() => setHoveredService(i)}
-                onHoverEnd={() => setHoveredService(null)}
-                className="card-premium p-8 cursor-pointer relative overflow-visible"
-                style={{
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                {/* 3D Platform shadow effect */}
+            <div className="flex items-center gap-3 mb-6">
+              <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+                <MonitorCheck className="w-8 h-8 text-orange-600" />
+              </motion.div>
+              <span className="text-2xl gradient-text">City Services</span>
+            </div>
+            <p className="text-lg text-gray-600 leading-relaxed border-b pb-3">
+              Access a comprehensive range of municipal services designed to make your city transactions easier and more convenient.
+            </p>
+          </motion.div>
+        
+          <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
+              style={{ perspective: "1000px" }}
+            >
+              {featuredServices.map((service, i) => (
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/5 to-gray-900/20 rounded-2xl"
-                  variants={{
-                    rest: { opacity: 0 },
-                    hover: { opacity: 1 }
+                  key={i}
+                  variants={itemVariants}
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                  onHoverStart={() => setHoveredService(i)}
+                  onHoverEnd={() => setHoveredService(null)}
+                  className="card-premium p-8 cursor-pointer relative overflow-visible"
+                  style={{
+                    transformStyle: "preserve-3d",
                   }}
-                />
-                {/* Ripple effect on hover */}
-                <AnimatePresence>
-                  {hoveredService === i && (
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-orange-100/50 to-emerald-100/50"
-                      initial={{ scale: 0, opacity: 1 }}
-                      animate={{ scale: 2, opacity: 0 }}
-                      exit={{ scale: 2, opacity: 0 }}
-                      transition={{ duration: 0.6 }}
-                    />
-                  )}
-                </AnimatePresence>
-
-                <div className="relative z-10">
-                  {/* 3D Popping Icon */}
-                  <motion.div 
-                    className="text-6xl mb-4 flex justify-center items-center absolute left-1/2 top-4 -translate-x-1/2"
-                    style={{
-                      transformStyle: "preserve-3d",
-                      zIndex: 50,
-                    }}
+                >
+                  {/* 3D Platform shadow effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/5 to-gray-900/20 rounded-2xl"
                     variants={{
-                      rest: { 
-                        scale: 1, 
-                        rotateY: 0,
-                        rotateX: 0,
-                        z: 0,
-                        y: 0,
-                        filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.1))",
-                        transition: {
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20
-                        }
-                      },
-                      hover: { 
-                        scale: 2.5, 
-                        rotateY: 25,
-                        rotateX: -20,
-                        z: 150,
-                        y: -80,
-                        filter: "drop-shadow(0 50px 80px rgba(0,0,0,0.5))",
-                        transition: {
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 15
-                        }
-                      }
+                      rest: { opacity: 0 },
+                      hover: { opacity: 1 }
                     }}
-                  >
-                    {service.icon}
-                  </motion.div>
-                  </div>
-                  {/* Content pushed down to make space */}
-                  <div className="mt-24">
-                  {/* Content pushed down to make space */}
-                  <div className="mt-20">
-                    <motion.h3 
-                      className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors"
+                  />
+                  {/* Ripple effect on hover */}
+                  <AnimatePresence>
+                    {hoveredService === i && (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-br from-orange-100/50 to-emerald-100/50"
+                        initial={{ scale: 0, opacity: 1 }}
+                        animate={{ scale: 2, opacity: 0 }}
+                        exit={{ scale: 2, opacity: 0 }}
+                        transition={{ duration: 0.6 }}
+                      />
+                    )}
+                  </AnimatePresence>
+
+                  <div className="relative z-10">
+                    {/* 3D Popping Icon */}
+                    <motion.div 
+                      className="text-6xl mb-4 flex justify-center items-center absolute left-1/2 top-4 -translate-x-1/2"
+                      style={{
+                        transformStyle: "preserve-3d",
+                        zIndex: 50,
+                      }}
                       variants={{
-                        rest: { x: 0 },
-                        hover: { x: 5 }
+                        rest: { 
+                          scale: 1, 
+                          rotateY: 0,
+                          rotateX: 0,
+                          z: 0,
+                          y: 0,
+                          filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.1))",
+                          transition: {
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 20
+                          }
+                        },
+                        hover: { 
+                          scale: 2.5, 
+                          rotateY: 25,
+                          rotateX: -20,
+                          z: 150,
+                          y: -80,
+                          filter: "drop-shadow(0 50px 80px rgba(0,0,0,0.5))",
+                          transition: {
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 15
+                          }
+                        }
                       }}
                     >
-                      {service.name}
-                    </motion.h3>
-                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                      {service.icon}
+                    </motion.div>
+                    </div>
+                    {/* Content pushed down to make space */}
+                    <div className="mt-24">
+                    {/* Content pushed down to make space */}
+                    <div className="mt-20">
+                      <motion.h3 
+                        className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors"
+                        variants={{
+                          rest: { x: 0 },
+                          hover: { x: 5 }
+                        }}
+                      >
+                        {service.name}
+                      </motion.h3>
+                      <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                    </div>
                   </div>
-                </div>
 
-                {/* Decorative corner animation */}
-                <motion.div
-                  className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-200/30 to-transparent rounded-bl-full"
-                  variants={{
-                    rest: { scale: 0, opacity: 0 },
-                    hover: { scale: 1, opacity: 1 }
-                  }}
-                />
-              </motion.div>
-            ))}
-        </motion.div>
-
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/services">
-              <button className="px-8 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold hover:shadow-xl transition-all inline-flex items-center gap-2">
-                Explore All Services
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </Link>
+                  {/* Decorative corner animation */}
+                  <motion.div
+                    className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-200/30 to-transparent rounded-bl-full"
+                    variants={{
+                      rest: { scale: 0, opacity: 0 },
+                      hover: { scale: 1, opacity: 1 }
+                    }}
+                  />
+                </motion.div>
+              ))}
           </motion.div>
-      </div>
-    </section>
+
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/services">
+                <button className="px-8 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold hover:shadow-xl transition-all inline-flex items-center gap-2">
+                  Explore All Services
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
+            </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white shadow-2xl">
+        <div className="text-center sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              animate={{ backgroundPosition: ["0%", "100%", "0%"] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #1f2937, #ea580c, #059669, #1f2937)",
+                backgroundSize: "200% auto",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Access Government Services Easily
+            </motion.h2>
+
+            <p className="text-gray-600 text-lg mb-8 max-w-3xl mx-auto">
+              Manage your local government needs in one platform—request documents, track applications, and stay updated with city services with just a few clicks.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/login">
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(234, 88, 12, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 rounded-full border-2 border-orange-600 bg-gradient-to-r from-orange-600 to-orange-500 text-white font-bold relative overflow-hidden"
+                >
+                  <span className="relative z-10">Log In</span>
+                </motion.button>
+              </Link>
+
+              <Link href="/register">
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(254, 243, 199, 0.5)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 rounded-full border-2 border-orange-600 text-orange-600 font-bold transition-colors"
+                >
+                  Register
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </main>
   )
 }

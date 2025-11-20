@@ -8,7 +8,7 @@ export default function ServicesPage() {
     <PageLayout
       title="Services"
       subtitle="Explore all the services we offer to our citizens"
-      image="/government-services-city-utilities.jpg"
+      image="/banner_web-1536x288.jpg"
     >
       <ServicesSection />
     </PageLayout>
