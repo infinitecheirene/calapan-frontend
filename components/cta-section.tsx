@@ -49,7 +49,7 @@ export default function CTASection() {
                   boxShadow: "0 20px 40px rgba(234, 88, 12, 0.3)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-orange-600 to-orange-500 text-white font-bold relative overflow-hidden"
+                className="px-8 py-3 rounded-full border-2 border-orange-600 bg-gradient-to-r from-orange-600 to-orange-500 text-white font-bold relative overflow-hidden"
               >
                 <span className="relative z-10">Services</span>
               </motion.button>

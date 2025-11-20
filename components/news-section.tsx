@@ -63,7 +63,7 @@ export default function NewsSection() {
                 className="group p-6 rounded-2xl bg-white border border-gray-100 hover:border-orange-200 cursor-pointer transition-all shadow-sm hover:shadow-md"
               >
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-emerald-100 to-orange-100 text-gray-700">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold ">
                     {item.category}
                   </span>
                 </div>

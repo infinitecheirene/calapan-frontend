@@ -74,22 +74,38 @@ export default function AboutSection() {
 
         <section className="pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <h1 className="uppercase text-4xl font-semibold text-center mb-6">Calapan City Map</h1>
-              <div style={{ width: '100%', height: '100%' }}>
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87838.11255507327!2d121.18381580809984!3d13.354453691561028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bce8d27f6f844d%3A0xf7cc1b1c943ab71b!2sCalapan%20City%2C%20Oriental%20Mindoro!5e0!3m2!1sen!2sph!4v1763351634627!5m2!1sen!2sph"
-                      width="100%"
-                      height="450"
-                      style={{ border: 0 }}
-                      title="Calapan City Map"
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="border rounded-xl"
-                    />
+            <h1 className="uppercase text-4xl font-semibold text-center mb-6">
+              Calapan City Map
+            </h1>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Google Map */}
+              <div className="w-full">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87838.11255507327!2d121.18381580809984!3d13.354453691561028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bce8d27f6f844d%3A0xf7cc1b1c943ab71b!2sCalapan%20City%2C%20Oriental%20Mindoro!5e0!3m2!1sen!2sph!4v1763351634627!5m2!1sen!2sph"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  title="Calapan City Map"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="border rounded-xl"
+                />
               </div>
+
+              {/* Base Map Image */}
+              <div className="w-full flex items-center">
+                <img
+                  src="/BASE-MAP.png"
+                  alt="Calapan City Base Map"
+                  className="w-full h-[450px] object-contain border rounded-xl bg-white"
+                />
+              </div>
+            </div>
           </div>
         </section>
+
         <CTASection />
       </div>
     </main>
