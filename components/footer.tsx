@@ -107,7 +107,7 @@ export default function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-gray-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-1 group"
+                        className="text-gray-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-1 group w-30"
                       >
                         <span className="opacity-0 group-hover:opacity-100 transition-opacity">
                           <ArrowRight className="w-3 h-3" />
